@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@theme {
+  --color-teal: #1BBFBF;
+  --color-teal-dark: #0fa0a0;
+  --color-teal-light: #e8f9f9;
+  --color-yellow: #F5C518;
+  --color-yellow-light: #fef9e6;
+  --color-beige: #FAF7F2;
+  --color-beige-mid: #F2EDE4;
+  --color-beige-dark: #E8E0D2;
+  --color-ink: #1A1A1A;
+  --color-ink-mid: #3D3D3D;
+  --color-ink-soft: #666666;
+
+  --font-sans: var(--font-lato), Lato, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), "Montserrat", sans-serif;
+
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.09);
+  --radius-card: 18px;
+  --radius-sm: 10px;
+  --transition-base: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-beige-mid);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-teal);
+  border-radius: 3px;
+}
+
+/* ── Keyframes ── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Hero fade-up helpers ── */
+.hero-fade-1 {
+  animation: fade-up 0.6s ease both;
+}
+.hero-fade-2 {
+  animation: fade-up 0.6s 0.1s ease both;
+}
+.hero-fade-3 {
+  animation: fade-up 0.6s 0.2s ease both;
+}
+.hero-fade-4 {
+  animation: fade-up 0.6s 0.3s ease both;
+}
+.hero-fade-5 {
+  animation: fade-up 0.6s 0.4s ease both;
+}
+.hero-visual-anim {
+  animation: fade-up 0.8s 0.2s ease both;
+}
+
+/* ── Floating cards ── */
+.float-1 {
+  animation: float-y 3s ease-in-out infinite;
+}
+.float-2 {
+  animation: float-y 3s 1.5s ease-in-out infinite;
+}
+
+/* ── Marquee ── */
+.marquee-track {
+  animation: marquee-scroll 40s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Scroll reveal ──
+   .reveal elements are ALWAYS visible (no initial opacity:0).
+   When .visible is added by JS, the animation plays from hidden→visible.
+   .no-anim is added to elements already in the viewport on load (skip flash). */
+@keyframes reveal-in {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal.visible          { animation: reveal-in 0.65s ease both; }
+.reveal.visible.no-anim  { animation: none; }
+
+.reveal-d1.visible { animation-delay: 0.08s; }
+.reveal-d2.visible { animation-delay: 0.16s; }
+.reveal-d3.visible { animation-delay: 0.24s; }
+.reveal-d4.visible { animation-delay: 0.32s; }
+
+/* ── Nav link underline ── */
+.nav-link {
+  position: relative;
+  color: var(--color-ink-mid);
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-teal);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+.nav-link:hover {
+  color: var(--color-teal);
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Service card gradient overlay ── */
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-teal-light),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+.service-card:hover .service-card-overlay {
+  opacity: 1;
+}
+
+/* ── Rental image zoom ── */
+.rental-card-img {
+  transition: transform 0.5s ease;
+}
+.rental-card:hover .rental-card-img {
+  transform: scale(1.06);
+}
+
+/* ── Steps connector line ── */
+.steps-line::before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-teal), var(--color-yellow));
+  z-index: 0;
+}
+
+/* ── Section helpers ── */
+.section-label-line::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-teal);
+  border-radius: 2px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* ── About value checkmark ── */
+.about-value::before {
+  content: "✓";
+  color: var(--color-teal);
+  font-weight: 900;
+  margin-right: 8px;
+}
