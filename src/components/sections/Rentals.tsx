@@ -6,10 +6,10 @@ import { RowDataPacket } from "mysql2";
 const S3_BASE = "https://elk-storage-bucket.s3.ap-south-1.amazonaws.com";
 
 const FEATURED_IDS = [
-  "1759920609703901",
+  "1775801766773793",
   "1770093262317595",
-  "1762064611532913",
-  "1759671120342710",
+  "1775812920593336",
+  "1775892676504987",
 ];
 
 

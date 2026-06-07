@@ -35,10 +35,13 @@ export default function RentalsGrid({ rentals }: { rentals: RentalItem[] }) {
             <button
               key={r.ad_id}
               onClick={() => setActive({ icon: badge, name: r.title })}
-              className="rental-card bg-white rounded-[18px] overflow-hidden transition-all shadow-[var(--shadow-soft)] hover:-translate-y-1.5 hover:shadow-[var(--shadow-card)] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+              className="rental-card bg-white rounded-[18px] overflow-hidden transition-all shadow-[var(--shadow-soft)] hover:-translate-y-1.5 hover:shadow-[var(--shadow-card)] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-teal flex flex-col"
             >
               {/* Image */}
-              <div className="h-[180px] relative overflow-hidden bg-beige-mid">
+              <div
+                className="h-[180px] shrink-0 relative overflow-hidden bg-beige-mid"
+                style={{ transform: 'translateZ(0)' }}
+              >
                 {r.imgUrl ? (
                   <Image
                     src={r.imgUrl}
@@ -59,18 +62,18 @@ export default function RentalsGrid({ rentals }: { rentals: RentalItem[] }) {
               </div>
 
               {/* Info */}
-              <div className="p-4">
-                <span className="inline-block bg-teal-light text-teal text-[0.65rem] font-bold uppercase px-2.5 py-0.5 rounded-full tracking-[0.06em] mb-2">
+              <div className="p-4 flex flex-col flex-1">
+                <span className="inline-block self-start bg-teal-light text-teal text-[0.65rem] font-bold uppercase px-2.5 py-0.5 rounded-full tracking-[0.06em] mb-2">
                   {r.category}
                 </span>
-                <div className="font-bold text-[0.9rem] text-ink mb-1 leading-tight">
+                <div className="font-bold text-[0.9rem] text-ink mb-1 leading-tight line-clamp-2 min-h-[2.4em]">
                   {r.title}
                 </div>
-                {r.loc && (
-                  <div className="text-[0.75rem] text-ink-soft">📍 {r.loc}</div>
-                )}
-                <div className="font-bold text-[0.85rem] text-teal mt-1.5">
-                  {r.price}
+                <div className="text-[0.75rem] text-ink-soft min-h-[1.3em]">
+                  {r.loc ? `📍 ${r.loc}` : ' '}
+                </div>
+                <div className="font-bold text-[0.85rem] text-teal mt-1.5 min-h-[1.3em]">
+                  {r.price || ' '}
                 </div>
               </div>
             </button>

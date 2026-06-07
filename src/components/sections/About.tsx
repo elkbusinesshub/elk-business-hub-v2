@@ -13,10 +13,9 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* Visual cards */}
         <ScrollReveal>
-          <div className="relative h-[420px] max-sm:h-auto max-sm:flex max-sm:flex-col max-sm:gap-4">
+          <div className="lg:relative lg:h-[450px] flex flex-col lg:block gap-4">
             <div
-              className="absolute max-sm:relative left-0 top-0 max-sm:w-full bg-teal rounded-[18px] p-9 text-white"
-              style={{ width: "75%", height: 260 }}
+              className="lg:absolute left-0 top-0 w-full lg:w-[75%] h-auto lg:h-[260px] bg-teal rounded-[18px] p-9 text-white"
             >
               <h3 className="font-serif font-bold text-[1.3rem] mb-2.5">Our Mission</h3>
               <p className="text-[0.85rem] opacity-85 leading-[1.6]">
@@ -40,8 +39,7 @@ export default function About() {
             </div>
 
             <div
-              className="absolute max-sm:relative right-0 bottom-0 max-sm:w-full bg-beige rounded-[18px] p-7 border-2 border-beige-dark"
-              style={{ width: "65%", height: 200 }}
+              className="lg:absolute right-[2%] lg:top-[225px] w-full lg:w-[60%] h-auto lg:h-[200px] bg-beige rounded-[18px] p-7 border-2 border-beige-dark shadow-[var(--shadow-card)]"
             >
               <h4 className="font-bold text-[0.9rem] text-ink mb-3">Our Values</h4>
               <div className="flex flex-col gap-2">

@@ -93,7 +93,7 @@ export default function AppDownload() {
             href="https://apps.apple.com/in/app/elk-business-hub/id6747287788"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 no-underline text-white rounded-[10px] px-6 py-3 transition-all hover:bg-white"
+            className="group flex items-center justify-center gap-3 no-underline text-white rounded-[10px] px-6 py-3 transition-all hover:bg-white w-[180px] h-[60px]"
             style={{
               background: "rgba(255,255,255,0.15)",
               border: "1.5px solid rgba(255,255,255,0.3)",
@@ -102,7 +102,7 @@ export default function AppDownload() {
             <AppleLogo className="w-7 h-7 text-white group-hover:text-ink transition-colors flex-shrink-0" />
             <div className="text-left">
               <span className="block text-[0.65rem] uppercase tracking-[0.06em] opacity-70 group-hover:text-ink group-hover:opacity-60 transition-colors">
-                Download on the
+                Get it on
               </span>
               <strong className="text-base font-bold group-hover:text-ink transition-colors">
                 App Store
@@ -115,7 +115,7 @@ export default function AppDownload() {
             href="https://play.google.com/store/apps/details?id=com.elkbusinesshub.elk"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 no-underline text-white rounded-[10px] px-6 py-3 transition-all hover:bg-white"
+            className="group flex items-center justify-center gap-3 no-underline text-white rounded-[10px] px-6 py-3 transition-all hover:bg-white w-[180px] h-[60px]"
             style={{
               background: "rgba(255,255,255,0.15)",
               border: "1.5px solid rgba(255,255,255,0.3)",

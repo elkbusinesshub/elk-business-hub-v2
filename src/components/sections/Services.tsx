@@ -71,6 +71,7 @@ type Service = { icon: string; name: string };
 
 export default function Services() {
   const [activeService, setActiveService] = useState<Service | null>(null);
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   return (
     <section id="services" className="py-20 px-[5%] bg-white">
@@ -92,11 +93,13 @@ export default function Services() {
         className="grid mt-12 gap-5"
         style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}
       >
-        {services.map((s) => (
+        {services.map((s, i) => (
           <button
             key={s.name}
             onClick={() => setActiveService(s)}
-            className="service-card bg-beige rounded-[18px] p-7 text-left cursor-pointer transition-all border-[1.5px] border-transparent relative overflow-hidden hover:border-teal hover:-translate-y-1 hover:shadow-[var(--shadow-card)] focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+            className={`service-card bg-beige rounded-[18px] p-7 text-left cursor-pointer transition-all border-[1.5px] border-transparent relative overflow-hidden hover:border-teal hover:-translate-y-1 hover:shadow-[var(--shadow-card)] focus:outline-none focus-visible:ring-2 focus-visible:ring-teal ${
+              i >= 3 && !showAllMobile ? "hidden md:block" : ""
+            }`}
           >
             <div className="service-card-overlay" />
             <div className="w-[52px] h-[52px] rounded-[14px] bg-teal-light flex items-center justify-center text-2xl mb-4 relative z-10">
@@ -111,6 +114,17 @@ export default function Services() {
           </button>
         ))}
       </ScrollReveal>
+
+      <div className="mt-6 text-center md:hidden">
+        <button
+          onClick={() => setShowAllMobile((v) => !v)}
+          className="text-teal font-bold text-[0.9rem] cursor-pointer bg-transparent border-none hover:underline"
+        >
+          {showAllMobile
+            ? "Show Less ↑"
+            : `View More Services →`}
+        </button>
+      </div>
 
       <ServiceModal
         service={activeService}

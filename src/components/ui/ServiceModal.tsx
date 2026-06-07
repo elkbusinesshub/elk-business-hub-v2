@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 
+const APP_STORE_URL = 'https://apps.apple.com/in/app/elk-business-hub/id6747287788';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.elkbusinesshub.elk';
+
 interface ServiceModalProps {
   service: { icon: string; name: string } | null;
   onClose: () => void;
@@ -10,6 +13,16 @@ interface ServiceModalProps {
 
 export default function ServiceModal({ service, onClose }: ServiceModalProps) {
   const [downloadUrl, setDownloadUrl] = useState('');
+
+  const handleQrClick = () => {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) {
+      window.location.href = PLAY_STORE_URL;
+    } else if (/iPad|iPhone|iPod/.test(ua)) {
+      window.location.href = APP_STORE_URL;
+    }
+    // Desktop: no redirect — let the user scan the QR with their phone
+  };
 
   useEffect(() => {
     const base =
@@ -78,10 +91,14 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
           {/* QR code */}
           <div className="flex flex-col items-center gap-3">
             <p className="text-[0.82rem] text-ink-soft">
-              Scan with your phone camera to download
+              <span className="md:hidden">Tap the code to open the app on your store</span>
+              <span className="hidden md:inline">Scan with your phone camera to download</span>
             </p>
 
-            <div className="p-3 rounded-[16px] border-2 border-beige-mid bg-white">
+            <div
+              onClick={handleQrClick}
+              className="p-3 rounded-[16px] border-2 border-beige-mid bg-white cursor-pointer md:cursor-default transition-transform active:scale-95"
+            >
               {downloadUrl ? (
                 <QRCodeSVG
                   value={downloadUrl}
@@ -98,7 +115,7 @@ export default function ServiceModal({ service, onClose }: ServiceModalProps) {
               )}
             </div>
 
-            
+
           </div>
         </div>
       </div>
