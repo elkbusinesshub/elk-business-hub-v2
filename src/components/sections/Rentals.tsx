@@ -1,5 +1,6 @@
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import RentalsGrid from "@/components/ui/RentalsGrid";
+import ListNowButton from "@/components/ui/ListNowButton";
 import pool from "@/lib/db";
 import { RowDataPacket } from "mysql2";
 
@@ -97,12 +98,15 @@ export default async function Rentals() {
             bikes to furnished apartments and event equipment. Best rates,
             verified owners.
           </p>
-          <a
-            href="#app"
-            className="bg-teal text-white px-8 py-3.5 rounded-full font-bold text-[0.95rem] no-underline inline-flex items-center gap-2 transition-all hover:bg-teal-dark hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(27,191,191,0.35)]"
-          >
-            Browse Rentals →
-          </a>
+          <div className="flex gap-4 flex-wrap">
+            <a
+              href="#app"
+              className="bg-teal text-white px-8 py-3.5 rounded-full font-bold text-[0.95rem] no-underline inline-flex items-center gap-2 transition-all hover:bg-teal-dark hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(27,191,191,0.35)]"
+            >
+              Browse Rentals →
+            </a>
+            <ListNowButton />
+          </div>
         </ScrollReveal>
 
         {/* Right — cards grid */}

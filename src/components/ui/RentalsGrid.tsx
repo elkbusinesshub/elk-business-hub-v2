@@ -1,8 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ServiceModal from '@/components/ui/ServiceModal';
+import ListingEnquiryModal from '@/components/ui/ListingEnquiryModal';
 
 const CATEGORY_BADGE: Record<string, string> = {
   Cars: '🚗',
@@ -24,6 +25,36 @@ export interface RentalItem {
 
 export default function RentalsGrid({ rentals }: { rentals: RentalItem[] }) {
   const [active, setActive] = useState<{ icon: string; name: string } | null>(null);
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('elk-listing-enquiry-shown')) return;
+
+    const section = document.getElementById('rentals');
+    if (!section) return;
+
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !timer) {
+          timer = setTimeout(() => {
+            setEnquiryOpen(true);
+            sessionStorage.setItem('elk-listing-enquiry-shown', 'true');
+          }, 4000);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0, rootMargin: '-45% 0px -45% 0px' }
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+      if (timer) clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <>
@@ -82,6 +113,7 @@ export default function RentalsGrid({ rentals }: { rentals: RentalItem[] }) {
       </div>
 
       <ServiceModal service={active} onClose={() => setActive(null)} />
+      <ListingEnquiryModal open={enquiryOpen} onClose={() => setEnquiryOpen(false)} />
     </>
   );
 }
