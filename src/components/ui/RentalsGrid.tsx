@@ -1,9 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import ServiceModal from '@/components/ui/ServiceModal';
-import ListingEnquiryModal from '@/components/ui/ListingEnquiryModal';
+import dynamic from 'next/dynamic';
+import { useEffect, useMemo, useState } from 'react';
+
+const ServiceModal = dynamic(() => import('@/components/ui/ServiceModal'), { ssr: false });
+const ListingEnquiryModal = dynamic(() => import('@/components/ui/ListingEnquiryModal'), {
+  ssr: false,
+});
 
 const CATEGORY_BADGE: Record<string, string> = {
   Cars: '🚗',
@@ -23,9 +27,36 @@ export interface RentalItem {
   loc: string;
 }
 
+const ROTATE_INTERVAL = 6000;
+const PAGE_SIZE = 4;
+
 export default function RentalsGrid({ rentals }: { rentals: RentalItem[] }) {
   const [active, setActive] = useState<{ icon: string; name: string } | null>(null);
   const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const [page, setPage] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  const chunks = useMemo(() => {
+    const out: RentalItem[][] = [];
+    for (let i = 0; i < rentals.length; i += PAGE_SIZE) {
+      out.push(rentals.slice(i, i + PAGE_SIZE));
+    }
+    return out;
+  }, [rentals]);
+
+  useEffect(() => {
+    if (chunks.length <= 1) return;
+    const interval = setInterval(() => {
+      setFading(true);
+      setTimeout(() => {
+        setPage((p) => (p + 1) % chunks.length);
+        setFading(false);
+      }, 300);
+    }, ROTATE_INTERVAL);
+    return () => clearInterval(interval);
+  }, [chunks.length]);
+
+  const visible = chunks[page] ?? [];
 
   useEffect(() => {
     if (sessionStorage.getItem('elk-listing-enquiry-shown')) return;
@@ -58,8 +89,8 @@ export default function RentalsGrid({ rentals }: { rentals: RentalItem[] }) {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4">
-        {rentals.map((r) => {
+      <div className={`grid grid-cols-2 gap-4 transition-opacity duration-300 ${fading ? 'opacity-0' : 'opacity-100'}`}>
+        {visible.map((r) => {
           const badge = CATEGORY_BADGE[r.category] ?? '📦';
 
           return (

@@ -12,19 +12,44 @@ const lato = Lato({
 });
 
 
+const SITE_URL = "https://elkbusinesshub.com";
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
-  title: "ELK Business Hub – Your Growth Partner",
+  metadataBase: new URL(SITE_URL),
+  title: "ELK Business Hub – Rent, Hire & Advertise in Kannur, Kerala",
   description:
-    "India's most versatile service marketplace. Rent, hire, advertise, and grow — all in one place.",
+    "India's most versatile service marketplace. Rent vehicles, hire local pros, advertise your business, and grow — all in one place.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-IN": "/",
+      "x-default": "/",
+    },
+  },
   icons: {
     icon: "/appicon.png",
     apple: "/appicon.png",
   },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ELK Business Hub",
+  url: SITE_URL,
+  logo: `${SITE_URL}/appicon.png`,
+  description:
+    "India's most versatile service marketplace. Rent vehicles, hire local pros, advertise your business, and grow — all in one place.",
+  sameAs: [
+    "https://www.linkedin.com/company/elkcompany/",
+    "https://www.instagram.com/elkcompany2024",
+    "https://x.com/elkcompanyin",
+  ],
 };
 
 export default function RootLayout({
@@ -35,6 +60,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lato.variable}`}>
       <body className="font-sans bg-beige text-ink overflow-x-hidden leading-relaxed">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         {children}
         <Script id="reveal" strategy="afterInteractive">{`
           (function () {
@@ -47,15 +78,25 @@ export default function RootLayout({
               });
             }, { threshold: 0.1 });
 
-            document.querySelectorAll('.reveal').forEach(function (el) {
+            var els = document.querySelectorAll('.reveal');
+            var viewportHeight = window.innerHeight;
+            var aboveFold = [];
+            var belowFold = [];
+
+            els.forEach(function (el) {
               var rect = el.getBoundingClientRect();
-              if (rect.top < window.innerHeight) {
-                // Already visible on load — show instantly, skip animation
-                el.classList.add('visible', 'no-anim');
+              if (rect.top < viewportHeight) {
+                aboveFold.push(el);
               } else {
-                // Below fold — watch for scroll entry
-                obs.observe(el);
+                belowFold.push(el);
               }
+            });
+
+            aboveFold.forEach(function (el) {
+              el.classList.add('visible', 'no-anim');
+            });
+            belowFold.forEach(function (el) {
+              obs.observe(el);
             });
           })();
         `}</Script>

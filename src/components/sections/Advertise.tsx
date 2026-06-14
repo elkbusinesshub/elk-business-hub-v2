@@ -86,7 +86,7 @@ export default function Advertise() {
                     {f.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold text-[0.9rem] mb-0.5 text-white">{f.title}</h4>
+                    <h3 className="font-bold text-[0.9rem] mb-0.5 text-white">{f.title}</h3>
                     <p className="text-[0.8rem] leading-[1.5]" style={{ color: 'rgba(255,255,255,0.6)' }}>
                       {f.desc}
                     </p>

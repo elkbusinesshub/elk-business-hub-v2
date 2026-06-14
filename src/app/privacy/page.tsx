@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy – ELK Business Hub",
+  alternates: { canonical: "/privacy" },
+};
 
 const sections = [
   {

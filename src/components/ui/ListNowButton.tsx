@@ -1,7 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import ListingEnquiryModal from '@/components/ui/ListingEnquiryModal';
+import dynamic from 'next/dynamic';
+
+const ListingEnquiryModal = dynamic(() => import('@/components/ui/ListingEnquiryModal'), {
+  ssr: false,
+});
 
 export default function ListNowButton() {
   const [open, setOpen] = useState(false);

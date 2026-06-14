@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
+
+export const metadata: Metadata = {
+  title: "Terms of Service – ELK Business Hub",
+  alternates: { canonical: "/terms" },
+};
 
 const prohibitedItems = [
   "Alcoholic Beverages, Liquor, tobacco products, drugs, psychotropic substances, narcotics, intoxicants of any description, medicines, palliative/curative substances nor shall you provide link directly or indirectly to or include descriptions of items, products or services that are prohibited under any applicable law including but not limited to the Drugs and Cosmetics Act, 1940, the Drugs and Magic Remedies Act, 1954, Narcotic Drug and Prohibited Substances Act and the Indian Penal Code, 1860.",

@@ -146,7 +146,7 @@ export default function CareersPage() {
     <div className="min-h-screen bg-beige">
       {/* Nav */}
       <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-beige-mid px-[5%] py-4 flex items-center justify-between">
-        <Link href="/"><ELKLogo height={28} /></Link>
+        <Link href="/" aria-label="ELK Business Hub – Home"><ELKLogo height={28} /></Link>
         <Link href="/" className="text-[0.85rem] font-bold text-ink-soft hover:text-teal transition-colors no-underline">
           ← Back to Home
         </Link>

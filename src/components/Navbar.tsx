@@ -47,7 +47,7 @@ export default function Navbar() {
           scrolled ? "py-[10px]" : "py-4"
         }`}
       >
-        <Link href="/" className="flex items-center gap-2.5 no-underline">
+        <Link href="/" className="flex items-center gap-2.5 no-underline" aria-label="ELK Business Hub – Home">
           <ELKLogo height={36} />
         </Link>
 

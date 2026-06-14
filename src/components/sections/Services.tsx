@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import ServiceModal from '@/components/ui/ServiceModal';
+
+const ServiceModal = dynamic(() => import('@/components/ui/ServiceModal'), { ssr: false });
 
 const services = [
   {

@@ -42,8 +42,8 @@ const CATEGORY_LABELS: Record<Lang, Record<string, string>> = {
 const T = {
   en: {
     toggleLabel: 'മലയാളം',
-    title: 'Looking for a Listing?',
-    subtitle: "Tell us what you need — we'll help you find it",
+    title: 'Got Something to Rent or Sell?',
+    subtitle: "Tell us what you have — we'll help you list it",
     nameLabel: 'Full Name',
     namePlaceholder: 'e.g. Rahul Menon',
     phoneLabel: 'Phone Number',
@@ -67,8 +67,8 @@ const T = {
   },
   ml: {
     toggleLabel: 'English',
-    title: 'ഒരു ലിസ്റ്റിംഗ് വേണോ?',
-    subtitle: 'നിങ്ങൾക്ക് എന്താണ് വേണ്ടതെന്ന് പറയൂ — ഞങ്ങൾ കണ്ടെത്താൻ സഹായിക്കാം',
+    title: 'വാടകയ്ക്കോ വിൽപ്പനയ്ക്കോ എന്തെങ്കിലും ഉണ്ടോ?',
+    subtitle: 'നിങ്ങൾക്ക് എന്തുണ്ടെന്ന് പറയൂ — ലിസ്റ്റ് ചെയ്യാൻ ഞങ്ങൾ സഹായിക്കാം',
     nameLabel: 'പൂർണ്ണമായ പേര്',
     namePlaceholder: 'ഉദാ. രാഹുൽ മേനോൻ',
     phoneLabel: 'ഫോൺ നമ്പർ',

@@ -11,6 +11,10 @@ const FEATURED_IDS = [
   "1770093262317595",
   "1775812920593336",
   "1775892676504987",
+  "1777430637950745",
+  "1775814503962742",
+  "1775813988143438",
+  "1776316243755247",
 ];
 
 
@@ -39,8 +43,8 @@ async function getFeaturedRentals(): Promise<RentalRow[]> {
      LEFT JOIN ad_price_details ap ON ap.ad_id = a.ad_id
      LEFT JOIN ad_locations    al ON al.ad_id = a.ad_id
      WHERE a.ad_id IN (${ph})
-     ORDER BY FIELD(a.ad_id, ${ph})`,
-    [...FEATURED_IDS, ...FEATURED_IDS]
+     ORDER BY RAND()`,
+    FEATURED_IDS
   );
   return rows;
 }

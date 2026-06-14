@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 import Counter from '@/components/ui/Counter';
 
 const appScreens = [
-  { src: '/app-screen-1.png', alt: 'ELK Services Screen' },
+  { src: '/app-screen-1.webp', alt: 'ELK Services Screen' },
   // { src: '/app-screen-2.png', alt: 'ELK Rental Detail Screen' },
-  { src: '/app-screen-3.png', alt: 'ELK Rentals Listing Screen' },
+  { src: '/app-screen-3.webp', alt: 'ELK Rentals Listing Screen' },
 ];
 
 const stats = [
@@ -139,6 +139,7 @@ export default function Hero() {
                       src={screen.src}
                       alt={screen.alt}
                       fill
+                      sizes="260px"
                       style={{ objectFit: 'cover', objectPosition: 'top' }}
                       priority={i === 0}
                     />
