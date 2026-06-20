@@ -1,0 +1,10 @@
+{
+  "_id": "author-elk-editorial",
+  "_type": "author",
+  "name": "ELK Editorial",
+  "slug": {
+    "_type": "slug",
+    "current": "elk-editorial"
+  },
+  "bio": "Insights from the ELK Business Hub team on renting, hiring, and growing small businesses across Kerala."
+}

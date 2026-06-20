@@ -1,0 +1,1108 @@
+{
+  "_id": "drafts.post-rental-revolution-india-kerala",
+  "_type": "post",
+  "title": "The Rental Revolution: How India and Kerala Are Saving Money by Renting Instead of Buying",
+  "slug": {
+    "_type": "slug",
+    "current": "rental-revolution-india-kerala-saving-money"
+  },
+  "excerpt": "From wedding décor to power tools, Indians are renting more and buying less. Here's how the rental economy is reshaping Kerala, creating small-business income, empowering women — plus 12 low-cost rental ideas you can start today.",
+  "publishedAt": "2026-06-20T16:40:57.810Z",
+  "author": {
+    "_type": "reference",
+    "_ref": "author-elk-editorial"
+  },
+  "categories": [
+    {
+      "_type": "reference",
+      "_key": "k42",
+      "_ref": "category-rental-economy"
+    }
+  ],
+  "body": [
+    {
+      "_type": "block",
+      "_key": "k0",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1",
+          "text": "⚠️ DRAFT NOTE (delete before publishing): replace every [bracketed] figure with a real, cited statistic, and drag your chosen images/charts into the 🖼️/📊 placeholder spots.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k2",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3",
+          "text": "Something quiet but powerful is changing the way India spends money. Instead of buying things we use once or twice, more of us are choosing to rent — from wedding décor and power tools to cameras, furniture, and party supplies. The logic is simple: why pay full price to own something you'll touch for a single day?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k4",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k5",
+          "text": "This shift from owning to accessing is the heart of the rental economy, and few states are embracing it as naturally as Kerala. Here's how the trend is growing, why people are increasingly comfortable with it, and how it's quietly creating income, savings, and small-business opportunities — especially for women and first-time entrepreneurs.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k6",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k7",
+          "text": "Why renting is booming across India",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k8",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k9",
+          "text": "Three forces are pushing the rental habit into the mainstream: cost, convenience, and consciousness. Renting frees up cash, removes the burden of storage and maintenance, and cuts down on waste from things bought and forgotten.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "ka",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kb",
+          "text": "Industry estimates suggest India's organised rental and ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "kc",
+          "text": "subscription economy is growing at a strong double-digit rate every year",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kd",
+          "text": " [verify with a sourced figure], led by electronics, furniture, vehicles, and event supplies.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "ke",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kf",
+          "text": "📊 CHART — India rental market size, year-on-year growth (bar chart, last 5 years)",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "kg",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kh",
+          "text": "🖼️ IMAGE — Flat-lay / Pinterest-style hero: neatly arranged rentable items (camera, party lights, décor, tools) on a warm beige background",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "ki",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kj",
+          "text": "Are people actually okay with renting?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "kk",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kl",
+          "text": "For a long time, ownership was a status symbol in India. That mindset is softening fast — especially among younger and value-conscious buyers who see renting as smart, not second-best.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "km",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kn",
+          "text": "Roughly [X]% of urban millennials say they'd rather rent high-cost, occasional-use items than buy them [verify].",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "ko",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kp",
+          "text": "Around [X]% of renters cite saving money as their main reason; [X]% mention avoiding clutter and storage [verify].",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "kq",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kr",
+          "text": "Trust grows when a platform handles quality, delivery, and returns — which is exactly the gap local platforms are filling.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "ks",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kt",
+          "text": "📊 CHART — Survey: top reasons people choose renting over buying (pie chart)",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "ku",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kv",
+          "text": "Kerala is quietly leading the way",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "kw",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kx",
+          "text": "Kerala has the right ingredients for a thriving rental culture: high literacy, strong community networks, a vibrant festival and wedding calendar, and a long tradition of cooperative, self-help enterprise such as Kudumbashree.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "ky",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kz",
+          "text": "From Onam celebrations to weddings and house functions, Keralites regularly need premium items for just a few days. Renting fits this rhythm perfectly — you get the quality you want, only when you need it, without the long-term cost.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k10",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k11",
+          "text": "🖼️ IMAGE — Warm Kerala home or Onam setting with rented décor, traditional lamps and seating (Pinterest-style, soft natural light)",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k12",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k13",
+          "text": "The biggest saver: weddings and events",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k14",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k15",
+          "text": "Weddings are where the rent-vs-buy maths becomes impossible to ignore. So many costly items are needed for a single day — and then never used again.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k16",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k17",
+          "text": "A family can comfortably save ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k18",
+          "text": "tens of thousands of rupees per event",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k19",
+          "text": " by renting instead of buying décor, lighting, furniture, and outfits [illustrative — replace with a real example].",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k1a",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1b",
+          "text": "Rent vs buy — a one-day wedding (illustrative)",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k1c",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1d",
+          "text": "Décor & stage setup — Buy ₹[—] · Rent ₹[—] · Save [X]%",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k1e",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1f",
+          "text": "Lighting & sound — Buy ₹[—] · Rent ₹[—] · Save [X]%",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k1g",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1h",
+          "text": "Furniture & seating — Buy ₹[—] · Rent ₹[—] · Save [X]%",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k1i",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1j",
+          "text": "Outfits & jewellery — Buy ₹[—] · Rent ₹[—] · Save [X]%",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k1k",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1l",
+          "text": "📊 CHART — Rent vs Buy total cost for a wedding (grouped bar chart)",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k1m",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1n",
+          "text": "Home services on demand",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k1o",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1p",
+          "text": "The same access-over-ownership idea powers the home-services boom. Instead of struggling with one-off jobs, people now book trusted help for cleaning, repairs, painting, plumbing, and maintenance — on demand, through a single platform.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k1q",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1r",
+          "text": "Deep cleaning before festivals and functions",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k1s",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1t",
+          "text": "Appliance and electrical repairs",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k1u",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1v",
+          "text": "Plumbing, carpentry, and quick fixes",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k1w",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1x",
+          "text": "Move-in / move-out and post-event cleanup",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k1y",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1z",
+          "text": "Earning from what you already own",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k20",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k21",
+          "text": "Renting isn't only about saving — it's about earning. Idle items in your home are sleeping money: a camera, a sound system, tools, extra furniture, even festival décor can generate income when you rent them out.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k22",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k23",
+          "text": "This is the ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k24",
+          "text": "money-regeneration mindset",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k25",
+          "text": ": instead of one-time spending, an asset you already own keeps paying you back, month after month.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k26",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k27",
+          "text": "🖼️ IMAGE — Clean grid of everyday items that can earn money when rented (Pinterest-style icon collage)",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k28",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k29",
+          "text": "Women, micro-entrepreneurship, and ELK",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k2a",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2b",
+          "text": "Some of the most exciting growth comes from women turning everyday skills into small businesses — offering cleaning and repair services, tailoring, catering, or renting out equipment, all through a platform that handles discovery and payments.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k2c",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2d",
+          "text": "Kerala's strong women's collectives make this especially powerful. With a platform like ELK Business Hub, a home-run service can reach customers across the neighbourhood without a shop, a website, or a big marketing budget — lowering the barrier to financial independence.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k2e",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2f",
+          "text": "📊 CHART — Share of new micro-businesses started by women, by sector (bar chart)",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k2g",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2h",
+          "text": "Rental adoption by sector (illustrative)",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k2i",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2j",
+          "text": "Different sectors are adopting renting at different speeds. Replace the figures below with sourced data before publishing:",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k2k",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2l",
+          "text": "Event & wedding supplies — ~[X]% of buyers now rent [verify]",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k2m",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2n",
+          "text": "Furniture & appliances — ~[X]% [verify]",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k2o",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2p",
+          "text": "Electronics & cameras — ~[X]% [verify]",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k2q",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2r",
+          "text": "Tools & equipment — ~[X]% [verify]",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k2s",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2t",
+          "text": "Vehicles & mobility — ~[X]% [verify]",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k2u",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2v",
+          "text": "📊 CHART — Rental adoption rate by sector (horizontal bar chart)",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k2w",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2x",
+          "text": "12 small, low-cost rental & service ideas to start today",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k2y",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2z",
+          "text": "Perfect for middle-aged and first-time entrepreneurs who want to start small, with low risk and items many people already have:",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k30",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k31",
+          "text": "Wedding & party décor rentals",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k32",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k33",
+          "text": "Camera, drone, and lighting gear rentals",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k34",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k35",
+          "text": "Power tools and DIY equipment library",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k36",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k37",
+          "text": "Furniture and appliance rentals for tenants and students",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k38",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k39",
+          "text": "Sound systems and projectors for events",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k3a",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3b",
+          "text": "Traditional outfits and jewellery rentals",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k3c",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3d",
+          "text": "Home deep-cleaning service",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k3e",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3f",
+          "text": "Appliance and electrical repair service",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k3g",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3h",
+          "text": "Tailoring and alteration service",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k3i",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3j",
+          "text": "Catering and tiffin service for functions",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k3k",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3l",
+          "text": "Kids' party kits (games, costumes, props)",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k3m",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3n",
+          "text": "Plant, pot, and garden-tool rentals for events",
+          "marks": []
+        }
+      ],
+      "listItem": "number",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "k3o",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3p",
+          "text": "From saving to financial stability",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k3q",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3r",
+          "text": "Put it together and a healthy cycle appears: rent what you rarely use, earn from what you own, and reinvest the savings into a small service or rental business. Spending less and earning more — even modestly — is how everyday families build real financial stability.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k3s",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3t",
+          "text": "How ELK Business Hub fits in",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k3u",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3v",
+          "text": "ELK Business Hub brings renters, owners, and service providers together in one trusted marketplace — so you can rent what you need, list what you own, and offer your skills to your community, all from your phone.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k3w",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "link0",
+          "href": "/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3x",
+          "text": "Explore what's possible on the ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k3y",
+          "text": "ELK platform",
+          "marks": [
+            "link0"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k3z",
+          "text": ".",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "k40",
+      "style": "blockquote",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k41",
+          "text": "The future isn't about owning more. It's about accessing what you need, earning from what you have, and keeping money moving in your community.",
+          "marks": []
+        }
+      ]
+    }
+  ]
+}

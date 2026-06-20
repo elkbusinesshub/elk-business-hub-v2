@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/#rentals", label: "Rentals" },
   { href: "/#advertise", label: "Advertise" },
   { href: "/#about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Navbar() {

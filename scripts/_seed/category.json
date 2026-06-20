@@ -1,0 +1,10 @@
+{
+  "_id": "category-rental-economy",
+  "_type": "category",
+  "title": "Rental Economy",
+  "slug": {
+    "_type": "slug",
+    "current": "rental-economy"
+  },
+  "description": "Stories and ideas about renting, the access economy, and earning from what you own."
+}
