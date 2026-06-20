@@ -21,9 +21,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "ELK Business Hub – Rent, Hire & Advertise in Kannur, Kerala",
+  title: "ELK Business Hub – Kerala's Rent, Hire & Business Portal",
   description:
-    "India's most versatile service marketplace. Rent vehicles, hire local pros, advertise your business, and grow — all in one place.",
+    "Kerala's trusted marketplace to rent vehicles, hire services, and advertise businesses in Kannur and beyond.",
   alternates: {
     canonical: "/",
     languages: {
@@ -44,7 +44,7 @@ const organizationJsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/appicon.png`,
   description:
-    "India's most versatile service marketplace. Rent vehicles, hire local pros, advertise your business, and grow — all in one place.",
+    "Kerala's trusted marketplace to rent vehicles, hire services, and advertise businesses in Kannur and beyond.",
   sameAs: [
     "https://www.linkedin.com/company/elkcompany/",
     "https://www.instagram.com/elkcompany2024",
