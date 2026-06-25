@@ -12,7 +12,7 @@ const lato = Lato({
 });
 
 
-const SITE_URL = "https://elkbusinesshub.com";
+const SITE_URL = "https://www.elkbusinesshub.com";
 
 export const viewport: Viewport = {
   width: "device-width",
