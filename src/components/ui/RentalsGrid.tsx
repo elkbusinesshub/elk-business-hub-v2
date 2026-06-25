@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import type { AdContact } from '@/components/ui/AdContactModal';
 
@@ -90,6 +90,8 @@ export default function RentalsGrid({
   const [enquiryOpen, setEnquiryOpen] = useState(false);
   const [page, setPage] = useState(0);
   const [fading, setFading] = useState(false);
+  const [highlightPin, setHighlightPin] = useState(false);
+  const pinnedRef = useRef<HTMLButtonElement>(null);
 
   const pinned = useMemo(
     () => (pinnedId ? rentals.find((r) => r.ad_id === pinnedId) ?? null : null),
@@ -131,6 +133,31 @@ export default function RentalsGrid({
 
   const visible = pinned ? [pinned, ...(chunks[page] ?? [])] : chunks[page] ?? [];
 
+  // First-view glow on the pinned card (once per session).
+  useEffect(() => {
+    const el = pinnedRef.current;
+    if (!el || sessionStorage.getItem('elk-pin-highlight-shown')) return;
+
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sessionStorage.setItem('elk-pin-highlight-shown', 'true');
+          setHighlightPin(true);
+          timer = setTimeout(() => setHighlightPin(false), 3000);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      if (timer) clearTimeout(timer);
+    };
+  }, []);
+
   useEffect(() => {
     if (sessionStorage.getItem('elk-listing-enquiry-shown')) return;
 
@@ -145,7 +172,7 @@ export default function RentalsGrid({
           timer = setTimeout(() => {
             setEnquiryOpen(true);
             sessionStorage.setItem('elk-listing-enquiry-shown', 'true');
-          }, 4000);
+          }, 8000);
           observer.disconnect();
         }
       },
@@ -170,6 +197,7 @@ export default function RentalsGrid({
           return (
             <button
               key={r.ad_id}
+              ref={isPinned ? pinnedRef : undefined}
               onClick={() =>
                 isPinned
                   ? setActive({
@@ -185,7 +213,7 @@ export default function RentalsGrid({
               }
               className={`rental-card bg-white rounded-[18px] overflow-hidden transition-all shadow-[var(--shadow-soft)] hover:-translate-y-1.5 hover:shadow-[var(--shadow-card)] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-teal flex flex-col ${
                 fading && !isPinned ? 'opacity-0' : 'opacity-100'
-              }`}
+              } ${isPinned && highlightPin ? 'pin-highlight' : ''}`}
             >
               {/* Image */}
               <div
@@ -208,14 +236,6 @@ export default function RentalsGrid({
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent z-10" />
-                {isPinned && (
-                  <span className="absolute top-2.5 right-2.5 z-20 inline-flex items-center gap-1 bg-[#1D9BF0] text-white text-[0.6rem] font-bold uppercase tracking-[0.06em] px-2 py-0.5 rounded-full shadow-md">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M12 2l2.4 1.8 3-.3 1.2 2.7 2.7 1.2-.3 3L23 12l-1.8 2.4.3 3-2.7 1.2-1.2 2.7-3-.3L12 22l-2.4-1.8-3 .3-1.2-2.7L2.7 16.4l.3-3L1 12l1.8-2.4-.3-3 2.7-1.2L6.4 2.7l3 .3L12 2zm-1.2 13.2l5.3-5.3-1.4-1.4-3.9 3.9-1.8-1.8-1.4 1.4 3.2 3.2z" />
-                    </svg>
-                    Verified
-                  </span>
-                )}
                 <span className="relative z-20 m-2.5 inline-block bg-white/18 backdrop-blur-[8px] border border-white/35 text-white text-[0.6rem] font-bold uppercase tracking-[0.07em] px-2.5 py-0.5 rounded-full">
                   {badge} {r.category}
                 </span>
@@ -236,8 +256,16 @@ export default function RentalsGrid({
                   {r.price || ' '}
                 </div>
                 {isPinned && (
-                  <div className="mt-auto pt-2 text-[0.65rem] italic text-ink-soft/60">
-                    No broker. Premium customer
+                  <div className="mt-auto pt-2 flex items-center gap-1.5 flex-wrap">
+                    <span className="inline-flex items-center gap-1 bg-[#1D9BF0] text-white text-[0.55rem] font-bold uppercase tracking-[0.05em] px-1.5 py-0.5 rounded-full shrink-0">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2l2.4 1.8 3-.3 1.2 2.7 2.7 1.2-.3 3L23 12l-1.8 2.4.3 3-2.7 1.2-1.2 2.7-3-.3L12 22l-2.4-1.8-3 .3-1.2-2.7L2.7 16.4l.3-3L1 12l1.8-2.4-.3-3 2.7-1.2L6.4 2.7l3 .3L12 2zm-1.2 13.2l5.3-5.3-1.4-1.4-3.9 3.9-1.8-1.8-1.4 1.4 3.2 3.2z" />
+                      </svg>
+                      Verified
+                    </span>
+                    <span className="text-[0.65rem] italic text-ink-soft/60">
+                      No broker. Premium customer
+                    </span>
                   </div>
                 )}
               </div>
