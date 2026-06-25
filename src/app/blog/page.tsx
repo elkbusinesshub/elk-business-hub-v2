@@ -7,6 +7,7 @@ import Footer from "@/components/sections/Footer";
 import { getPosts } from "@/sanity/lib/posts";
 import { urlFor } from "@/sanity/image";
 import type { PostListItem } from "@/sanity/types";
+import { formatDate } from "@/lib/date";
 
 export const metadata: Metadata = {
   title: "Blog – ELK Business Hub",
@@ -14,15 +15,6 @@ export const metadata: Metadata = {
     "News, guides, and stories from ELK Business Hub — Kerala's rent, hire, and business portal.",
   alternates: { canonical: "/blog" },
 };
-
-function formatDate(value?: string) {
-  if (!value) return "";
-  return new Date(value).toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
 
 function PostCard({ post }: { post: PostListItem }) {
   const cover = post.coverImage

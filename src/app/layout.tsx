@@ -48,6 +48,7 @@ const organizationJsonLd = {
   sameAs: [
     "https://www.linkedin.com/company/elkcompany/",
     "https://www.instagram.com/elkcompany2024",
+    "https://www.threads.com/@elkcompany2026",
     "https://x.com/elkcompanyin",
   ],
 };

@@ -10,17 +10,9 @@ import type { PortableTextBlock } from "@portabletext/types";
 
 import { urlFor } from "@/sanity/image";
 import type { SanityImageSource } from "@sanity/image-url";
+import { formatDate } from "@/lib/date";
 
 type Lang = "en" | "ml";
-
-function formatDate(value?: string) {
-  if (!value) return "";
-  return new Date(value).toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
 
 // How each Portable Text block is rendered into the page.
 const portableComponents: PortableTextComponents = {
