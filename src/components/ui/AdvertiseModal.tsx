@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import Button from '@/components/ui/Button';
 
 const schema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -93,12 +94,9 @@ export default function AdvertiseModal({ open, onClose }: Props) {
               <p className="text-ink-soft text-[0.88rem] leading-[1.6]">
                 We&apos;ve received your details and will contact you shortly.
               </p>
-              <button
-                onClick={onClose}
-                className="mt-6 bg-teal text-white px-8 py-2.5 rounded-full font-bold text-[0.9rem] hover:bg-teal-dark transition-colors"
-              >
+              <Button size="sm" onClick={onClose} className="mt-6">
                 Done
-              </button>
+              </Button>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4" noValidate>
@@ -166,13 +164,14 @@ export default function AdvertiseModal({ open, onClose }: Props) {
                 </p>
               )}
 
-              <button
+              <Button
                 type="submit"
+                fullWidth
                 disabled={submitStatus === 'loading'}
-                className="mt-1 w-full bg-teal text-white py-3 rounded-full font-bold text-[0.95rem] hover:bg-teal-dark transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(27,191,191,0.35)] disabled:opacity-60 disabled:cursor-not-allowed"
+                className="mt-1"
               >
                 {submitStatus === 'loading' ? 'Sending…' : 'Submit Enquiry →'}
-              </button>
+              </Button>
               <p className="text-center text-[0.73rem] text-ink-soft">
                 We&apos;ll never share your details with third parties.
               </p>

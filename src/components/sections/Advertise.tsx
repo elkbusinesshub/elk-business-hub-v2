@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import AdvertiseModal from '@/components/ui/AdvertiseModal';
+import Button from '@/components/ui/Button';
 
 const features = [
   {
@@ -95,12 +96,7 @@ export default function Advertise() {
               ))}
             </div>
 
-            <button
-              onClick={() => setModalOpen(true)}
-              className="bg-teal text-white px-8 py-3.5 rounded-full font-bold text-[0.95rem] inline-flex items-center gap-2 transition-all hover:bg-teal-dark hover:-translate-y-0.5 cursor-pointer"
-            >
-              Start Advertising →
-            </button>
+            <Button onClick={() => setModalOpen(true)}>Start Advertising →</Button>
           </ScrollReveal>
 
           <ScrollReveal delay={2} className="grid grid-cols-2 gap-3.5">

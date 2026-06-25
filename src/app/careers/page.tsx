@@ -1,11 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import Link from 'next/link';
 import ELKLogo from '@/components/ui/ELKLogo';
+import Button from '@/components/ui/Button';
+import Select from '@/components/ui/Select';
 
 const POSITIONS = [
   'Software Developer',
@@ -34,80 +36,6 @@ const perks = [
   { icon: '🌟', title: 'Ownership',      desc: 'Own your work. Drive decisions that matter.' },
   { icon: '💡', title: 'Learning First', desc: 'Workshops, courses, and a curious team around you.' },
 ];
-
-/* ── Custom position dropdown ─────────────────────────────────────── */
-function PositionDropdown({
-  value, onChange, onBlur, hasError,
-}: {
-  value: string; onChange: (v: string) => void; onBlur: () => void; hasError: boolean;
-}) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-        onBlur();
-      }
-    };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, [onBlur]);
-
-  return (
-    <div ref={ref} className="relative">
-      {/* Trigger */}
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className={`w-full flex items-center justify-between px-4 py-2.5 rounded-[10px] border text-[0.9rem] transition-all ${
-          hasError
-            ? 'border-red-400 bg-red-50 text-red-400'
-            : open
-            ? 'border-teal bg-white text-ink'
-            : 'border-beige-dark bg-beige text-ink hover:border-teal'
-        }`}
-      >
-        <span className={value ? 'text-ink' : 'text-ink-soft/50'}>
-          {value || 'Select a role…'}
-        </span>
-        <svg
-          width="16" height="16" viewBox="0 0 16 16" fill="none"
-          className={`transition-transform duration-200 text-ink-soft ${open ? 'rotate-180' : ''}`}
-        >
-          <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-
-      {/* Dropdown panel */}
-      {open && (
-        <div className="absolute z-50 left-0 right-0 mt-2 bg-white rounded-[14px] shadow-[0_12px_40px_rgba(0,0,0,0.14)] border border-beige-mid overflow-hidden">
-          {POSITIONS.map((p) => {
-            const isActive = p === value;
-            return (
-              <button
-                key={p}
-                type="button"
-                onClick={() => { onChange(p); setOpen(false); }}
-                className={`w-full flex items-center justify-between px-4 py-3 text-left text-[0.88rem] transition-colors ${
-                  isActive ? 'bg-teal-light text-teal font-bold' : 'text-ink hover:bg-beige'
-                }`}
-              >
-                <span>{p}</span>
-                {isActive && (
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7l3.5 3.5L12 3.5" stroke="#1BBFBF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </button>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
-}
 
 /* ── Page ─────────────────────────────────────────────────────────── */
 export default function CareersPage() {
@@ -205,9 +133,9 @@ export default function CareersPage() {
               <p className="text-ink-soft text-[0.9rem] leading-[1.7] max-w-[360px] mx-auto">
                 Thanks for applying to ELK. Our team will review your details and reach out.
               </p>
-              <Link href="/" className="mt-7 inline-block bg-teal text-white px-8 py-3 rounded-full font-bold text-[0.9rem] hover:bg-teal-dark transition-colors no-underline">
+              <Button href="/" size="sm" className="mt-7">
                 Back to Home
-              </Link>
+              </Button>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-[22px] p-8 shadow-[var(--shadow-card)] flex flex-col gap-5" noValidate>
@@ -243,11 +171,13 @@ export default function CareersPage() {
                 <Controller
                   name="position" control={control} defaultValue=""
                   render={({ field }) => (
-                    <PositionDropdown
+                    <Select
                       value={field.value}
                       onChange={field.onChange}
                       onBlur={field.onBlur}
                       hasError={!!errors.position}
+                      placeholder="Select a role…"
+                      options={POSITIONS.map((p) => ({ value: p, label: p }))}
                     />
                   )}
                 />
@@ -293,12 +223,9 @@ export default function CareersPage() {
                 <p className="text-[0.8rem] text-red-500 text-center">Something went wrong. Please try again.</p>
               )}
 
-              <button
-                type="submit" disabled={status === 'loading'}
-                className="w-full bg-teal text-white py-3.5 rounded-full font-bold text-[0.95rem] hover:bg-teal-dark transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(27,191,191,0.35)] disabled:opacity-60 disabled:cursor-not-allowed"
-              >
+              <Button type="submit" fullWidth disabled={status === 'loading'}>
                 {status === 'loading' ? 'Submitting…' : 'Submit Application →'}
-              </button>
+              </Button>
               <p className="text-center text-[0.73rem] text-ink-soft">Your details are kept confidential.</p>
             </form>
           )}

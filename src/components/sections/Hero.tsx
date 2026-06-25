@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Counter from '@/components/ui/Counter';
+import Button from '@/components/ui/Button';
 
 const appScreens = [
   { src: '/app-screen-1.webp', alt: 'ELK Services Screen' },
@@ -76,18 +77,10 @@ export default function Hero() {
           </p>
 
           <div className="hero-fade-4 flex gap-4 flex-wrap">
-            <a
-              href="#services"
-              className="bg-teal text-white px-8 py-3.5 rounded-full font-bold text-[0.95rem] no-underline inline-flex items-center gap-2 transition-all hover:bg-teal-dark hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(27,191,191,0.35)]"
-            >
-              Explore Platform →
-            </a>
-            <a
-              href="#app"
-              className="bg-transparent text-ink px-8 py-3.5 rounded-full font-bold text-[0.95rem] no-underline border-2 border-beige-dark inline-flex items-center gap-2 transition-all hover:border-teal hover:text-teal hover:-translate-y-0.5"
-            >
+            <Button href="#services">Explore Platform →</Button>
+            <Button href="#app" variant="secondary">
               📱 Get the App
-            </a>
+            </Button>
           </div>
 
           <div className="hero-fade-5 flex gap-8 mt-10">

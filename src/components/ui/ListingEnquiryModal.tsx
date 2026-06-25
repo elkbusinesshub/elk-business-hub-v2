@@ -5,6 +5,8 @@ import { createPortal } from 'react-dom';
 import { useForm, Controller, type Resolver } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import Button from '@/components/ui/Button';
+import Select from '@/components/ui/Select';
 
 type Lang = 'ml' | 'en';
 
@@ -91,80 +93,6 @@ const T = {
     },
   },
 } as const;
-
-/* ── Custom category dropdown ─────────────────────────────────────── */
-function CategoryDropdown({
-  value, onChange, onBlur, hasError, lang,
-}: {
-  value: string; onChange: (v: string) => void; onBlur: () => void; hasError: boolean; lang: Lang;
-}) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-        onBlur();
-      }
-    };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, [onBlur]);
-
-  return (
-    <div ref={ref} className="relative">
-      {/* Trigger */}
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className={`w-full flex items-center justify-between px-4 py-2.5 rounded-[10px] border text-[0.9rem] transition-all ${
-          hasError
-            ? 'border-red-400 bg-red-50 text-red-400'
-            : open
-            ? 'border-teal bg-white text-ink'
-            : 'border-beige-dark bg-beige text-ink hover:border-teal'
-        }`}
-      >
-        <span className={value ? 'text-ink' : 'text-ink-soft/50'}>
-          {value ? CATEGORY_LABELS[lang][value] : T[lang].categoryPlaceholder}
-        </span>
-        <svg
-          width="16" height="16" viewBox="0 0 16 16" fill="none"
-          className={`transition-transform duration-200 text-ink-soft ${open ? 'rotate-180' : ''}`}
-        >
-          <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-
-      {/* Dropdown panel */}
-      {open && (
-        <div className="absolute z-50 left-0 right-0 mt-2 bg-white rounded-[14px] shadow-[0_12px_40px_rgba(0,0,0,0.14)] border border-beige-mid overflow-y-auto max-h-[200px]">
-          {CATEGORIES.map((c) => {
-            const isActive = c === value;
-            return (
-              <button
-                key={c}
-                type="button"
-                onClick={() => { onChange(c); setOpen(false); }}
-                className={`w-full flex items-center justify-between px-4 py-3 text-left text-[0.88rem] transition-colors ${
-                  isActive ? 'bg-teal-light text-teal font-bold' : 'text-ink hover:bg-beige'
-                }`}
-              >
-                <span>{CATEGORY_LABELS[lang][c]}</span>
-                {isActive && (
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7l3.5 3.5L12 3.5" stroke="#1BBFBF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </button>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
-}
 
 const getSchema = (lang: Lang) => z.object({
   name: z.string().min(2, T[lang].errors.name),
@@ -278,12 +206,9 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
               <p className="text-ink-soft text-[0.88rem] leading-[1.6]">
                 {T[successLang].successMessage}
               </p>
-              <button
-                onClick={onClose}
-                className="mt-6 bg-teal text-white px-8 py-2.5 rounded-full font-bold text-[0.9rem] hover:bg-teal-dark transition-colors"
-              >
+              <Button size="sm" onClick={onClose} className="mt-6">
                 {T[successLang].done}
-              </button>
+              </Button>
             </div>
           ) : (
             <>
@@ -344,12 +269,16 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
                     control={control}
                     defaultValue="Properties"
                     render={({ field }) => (
-                      <CategoryDropdown
+                      <Select
                         value={field.value}
                         onChange={field.onChange}
                         onBlur={field.onBlur}
                         hasError={!!errors.category}
-                        lang={lang}
+                        placeholder={t.categoryPlaceholder}
+                        options={CATEGORIES.map((c) => ({
+                          value: c,
+                          label: CATEGORY_LABELS[lang][c],
+                        }))}
                       />
                     )}
                   />
@@ -371,13 +300,14 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
                   </p>
                 )}
 
-                <button
+                <Button
                   type="submit"
+                  fullWidth
                   disabled={submitStatus === 'loading'}
-                  className="mt-1 w-full bg-teal text-white py-3 rounded-full font-bold text-[0.95rem] hover:bg-teal-dark transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(27,191,191,0.35)] disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="mt-1"
                 >
                   {submitStatus === 'loading' ? t.sending : t.submit}
-                </button>
+                </Button>
                 <p className="text-center text-[0.73rem] text-ink-soft">
                   {t.footer}
                 </p>

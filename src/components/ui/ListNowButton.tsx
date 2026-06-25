@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
+import Button from '@/components/ui/Button';
 
 const ListingEnquiryModal = dynamic(() => import('@/components/ui/ListingEnquiryModal'), {
   ssr: false,
@@ -12,13 +13,9 @@ export default function ListNowButton() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="bg-transparent text-ink px-8 py-3.5 rounded-full font-bold text-[0.95rem] border-2 border-beige-dark inline-flex items-center gap-2 transition-all hover:border-teal hover:text-teal hover:-translate-y-0.5"
-      >
+      <Button type="button" variant="secondary" onClick={() => setOpen(true)}>
         📋 List Now
-      </button>
+      </Button>
       <ListingEnquiryModal open={open} onClose={() => setOpen(false)} />
     </>
   );

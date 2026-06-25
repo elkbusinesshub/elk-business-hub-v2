@@ -1,6 +1,7 @@
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import RentalsGrid from "@/components/ui/RentalsGrid";
 import ListNowButton from "@/components/ui/ListNowButton";
+import Button from "@/components/ui/Button";
 import pool from "@/lib/db";
 import { RowDataPacket } from "mysql2";
 
@@ -103,12 +104,7 @@ export default async function Rentals() {
             verified owners.
           </p>
           <div className="flex gap-4 flex-wrap">
-            <a
-              href="#app"
-              className="bg-teal text-white px-8 py-3.5 rounded-full font-bold text-[0.95rem] no-underline inline-flex items-center gap-2 transition-all hover:bg-teal-dark hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(27,191,191,0.35)]"
-            >
-              Browse Rentals →
-            </a>
+            <Button href="#app">Browse Rentals →</Button>
             <ListNowButton />
           </div>
         </ScrollReveal>
