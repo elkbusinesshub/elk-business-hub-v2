@@ -158,34 +158,36 @@ export default function RentalsGrid({
     };
   }, []);
 
-  useEffect(() => {
-    if (sessionStorage.getItem('elk-listing-enquiry-shown')) return;
-
-    const section = document.getElementById('rentals');
-    if (!section) return;
-
-    let timer: ReturnType<typeof setTimeout> | null = null;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !timer) {
-          timer = setTimeout(() => {
-            setEnquiryOpen(true);
-            sessionStorage.setItem('elk-listing-enquiry-shown', 'true');
-          }, 8000);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0, rootMargin: '-45% 0px -45% 0px' }
-    );
-
-    observer.observe(section);
-
-    return () => {
-      observer.disconnect();
-      if (timer) clearTimeout(timer);
-    };
-  }, []);
+  // Auto pop-up of the "Got Something to Rent or Sell?" enquiry form — disabled.
+  // Uncomment to re-enable the timed auto-open when the rentals section scrolls into view.
+  // useEffect(() => {
+  //   if (sessionStorage.getItem('elk-listing-enquiry-shown')) return;
+  //
+  //   const section = document.getElementById('rentals');
+  //   if (!section) return;
+  //
+  //   let timer: ReturnType<typeof setTimeout> | null = null;
+  //
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting && !timer) {
+  //         timer = setTimeout(() => {
+  //           setEnquiryOpen(true);
+  //           sessionStorage.setItem('elk-listing-enquiry-shown', 'true');
+  //         }, 8000);
+  //         observer.disconnect();
+  //       }
+  //     },
+  //     { threshold: 0, rootMargin: '-45% 0px -45% 0px' }
+  //   );
+  //
+  //   observer.observe(section);
+  //
+  //   return () => {
+  //     observer.disconnect();
+  //     if (timer) clearTimeout(timer);
+  //   };
+  // }, []);
 
   return (
     <>

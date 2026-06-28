@@ -7,6 +7,7 @@ import ELKLogo from "@/components/ui/ELKLogo";
 const navLinks = [
   { href: "/#services", label: "Services" },
   { href: "/#rentals", label: "Rentals" },
+  { href: "/calculator", label: "Calculator" },
   { href: "/#advertise", label: "Advertise" },
   { href: "/#about", label: "About" },
   { href: "/blog", label: "Blog" },
