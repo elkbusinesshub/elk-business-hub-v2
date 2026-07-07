@@ -2,12 +2,32 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(req: NextRequest) {
-  const { name, phone: rawPhone, category, location } = await req.json();
+  const form = await req.formData();
+
+  const name     = form.get('name') as string;
+  const rawPhone = form.get('phone') as string;
+  const category = form.get('category') as string;
+  const location = form.get('location') as string;
+  const isBusiness = form.get('isBusiness') === 'true';
+  const businessTitle = form.get('businessTitle') as string | null;
+  const businessDescription = form.get('businessDescription') as string | null;
+  const images = form.getAll('images').filter((f): f is File => f instanceof File);
+
   const phone = `+91 ${rawPhone}`;
 
-  if (!name || !phone || !category || !location) {
+  if (!name || !rawPhone || !category || !location) {
     return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });
   }
+  if (isBusiness && (!businessTitle || !businessDescription)) {
+    return NextResponse.json({ error: 'Business title and description are required.' }, { status: 400 });
+  }
+
+  const imageAttachments = await Promise.all(
+    images.map(async (file) => ({
+      filename: file.name,
+      content: Buffer.from(await file.arrayBuffer()),
+    }))
+  );
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -33,11 +53,18 @@ export async function POST(req: NextRequest) {
             <tr><td style="padding:8px 0;color:#888;">Phone</td><td style="padding:8px 0;font-weight:600;color:#1A1A1A;">${phone}</td></tr>
             <tr><td style="padding:8px 0;color:#888;">Looking For</td><td style="padding:8px 0;font-weight:600;color:#1A1A1A;">${category}</td></tr>
             <tr><td style="padding:8px 0;color:#888;">Location</td><td style="padding:8px 0;font-weight:600;color:#1A1A1A;">${location}</td></tr>
+            ${isBusiness ? `
+            <tr><td style="padding:8px 0;color:#888;vertical-align:top;">Business</td><td style="padding:8px 0;font-weight:600;color:#1BBFBF;">${businessTitle}</td></tr>
+            <tr><td style="padding:8px 0;color:#888;vertical-align:top;">Description</td><td style="padding:8px 0;color:#1A1A1A;line-height:1.6;">${businessDescription}</td></tr>
+            ` : ''}
           </table>
         </div>
-        <div style="padding:16px 28px;background:#f9f9f9;font-size:0.75rem;color:#aaa;">ELK Business Hub · elkbusinesshub.com</div>
+        <div style="padding:16px 28px;background:#f9f9f9;font-size:0.75rem;color:#aaa;">
+          ${imageAttachments.length ? `${imageAttachments.length} image(s) attached · ` : ''}ELK Business Hub · elkbusinesshub.com
+        </div>
       </div>
     `,
+    attachments: imageAttachments,
   });
 
   return NextResponse.json({ success: true });
