@@ -41,14 +41,6 @@ const testimonials = [
     role: "Home Cook · Kozhikode",
     avatarStyle: { background: "linear-gradient(135deg,#27ae60,#1e8449)" },
   },
-  {
-    stars: 5,
-    text: "We rented a furnished apartment through ELK for our team relocating to Kochi. The listing details were accurate, the owner was responsive, and check-in was seamless.",
-    initials: "VT",
-    name: "Vineeth Thomas",
-    role: "Startup Founder · Kochi",
-    avatarStyle: { background: "linear-gradient(135deg,#e67e22,#ca6f1e)" },
-  },
 ];
 
 function Card({ t }: { t: typeof testimonials[number] }) {
