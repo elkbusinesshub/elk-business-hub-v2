@@ -126,7 +126,7 @@ export default function AdvertiseModal({ open, onClose }: Props) {
                       <input
                         type="tel"
                         inputMode="numeric"
-                        placeholder="98765 43210"
+                        placeholder="XXXXXXXXXX"
                         maxLength={10}
                         value={field.value}
                         onChange={(e) => field.onChange(e.target.value.replace(/\D/g, '').slice(0, 10))}

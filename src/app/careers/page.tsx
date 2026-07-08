@@ -155,7 +155,7 @@ export default function CareersPage() {
                     <div className={`flex items-center rounded-[10px] overflow-hidden border transition-colors ${errors.phone ? 'border-red-400 bg-red-50' : 'border-beige-dark bg-beige focus-within:border-teal focus-within:bg-white'}`}>
                       <span className="px-3 py-2.5 text-[0.9rem] font-bold text-ink-soft border-r border-beige-dark bg-beige-mid select-none">+91</span>
                       <input
-                        type="tel" inputMode="numeric" placeholder="98765 43210" maxLength={10}
+                        type="tel" inputMode="numeric" placeholder="XXXXXXXXXX" maxLength={10}
                         value={field.value}
                         onChange={(e) => field.onChange(e.target.value.replace(/\D/g, '').slice(0, 10))}
                         onBlur={field.onBlur}

@@ -14,7 +14,8 @@ const CATEGORIES = [
   'Properties',
   'Cars',
   'Bikes',
-  'Helicopter',
+  'Cleaning',
+  'Laundry',
   'Painting',
   'Services',
   'Other',
@@ -25,7 +26,8 @@ const CATEGORY_LABELS: Record<Lang, Record<string, string>> = {
     Properties: 'Properties',
     Cars: 'Cars',
     Bikes: 'Bikes',
-    Helicopter: 'Helicopter',
+    Cleaning: 'Cleaning',
+    Laundry: 'Laundry',
     Painting: 'Painting',
     Services: 'Services',
     Other: 'Other',
@@ -34,7 +36,8 @@ const CATEGORY_LABELS: Record<Lang, Record<string, string>> = {
     Properties: 'പ്രോപ്പർട്ടികൾ',
     Cars: 'കാറുകൾ',
     Bikes: 'ബൈക്കുകൾ',
-    Helicopter: 'ഹെലികോപ്റ്റർ',
+    Cleaning: 'ക്ലീനിംഗ്',
+    Laundry: 'ലോൺഡ്രി',
     Painting: 'പെയിന്റിംഗ്',
     Services: 'സർവീസുകൾ',
     Other: 'മറ്റുള്ളവ',
@@ -151,7 +154,7 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
   const [lang, setLang] = useState<Lang>('en');
   const [successLang, setSuccessLang] = useState<Lang>('en');
-  const [showBusiness, setShowBusiness] = useState(false);
+  const [showBusiness, setShowBusiness] = useState(true);
   const [images, setImages] = useState<File[]>([]);
   const [imageError, setImageError] = useState('');
   const imageInputRef = useRef<HTMLInputElement>(null);
@@ -175,7 +178,7 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
     resolver,
     defaultValues: {
       name: '', phone: '', category: 'Properties', location: '',
-      isBusiness: false, businessTitle: '', businessDescription: '',
+      isBusiness: true, businessTitle: '', businessDescription: '',
     },
   });
 
@@ -220,7 +223,7 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
       reset();
       setSubmitStatus('idle');
       setLang('en');
-      setShowBusiness(false);
+      setShowBusiness(true);
       setImages([]);
       setImageError('');
       nameInputRef.current?.focus({ preventScroll: true });
@@ -347,7 +350,7 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
                         <input
                           type="tel"
                           inputMode="numeric"
-                          placeholder="98765 43210"
+                          placeholder="XXXXXXXXXX"
                           maxLength={10}
                           value={field.value}
                           onChange={(e) => field.onChange(e.target.value.replace(/\D/g, '').slice(0, 10))}
