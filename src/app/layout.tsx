@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Lato } from "next/font/google";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const lato = Lato({
@@ -102,6 +103,9 @@ export default function RootLayout({
           })();
         `}</Script>
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   );
 }
