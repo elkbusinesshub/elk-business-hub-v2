@@ -154,7 +154,7 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
   const [lang, setLang] = useState<Lang>('en');
   const [successLang, setSuccessLang] = useState<Lang>('en');
-  const [showBusiness, setShowBusiness] = useState(true);
+  const [showBusiness, setShowBusiness] = useState(false);
   const [images, setImages] = useState<File[]>([]);
   const [imageError, setImageError] = useState('');
   const imageInputRef = useRef<HTMLInputElement>(null);
@@ -178,7 +178,7 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
     resolver,
     defaultValues: {
       name: '', phone: '', category: 'Properties', location: '',
-      isBusiness: true, businessTitle: '', businessDescription: '',
+      isBusiness: false, businessTitle: '', businessDescription: '',
     },
   });
 
@@ -223,7 +223,7 @@ export default function ListingEnquiryModal({ open, onClose }: Props) {
       reset();
       setSubmitStatus('idle');
       setLang('en');
-      setShowBusiness(true);
+      setShowBusiness(false);
       setImages([]);
       setImageError('');
       nameInputRef.current?.focus({ preventScroll: true });

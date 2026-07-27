@@ -1,6 +1,7 @@
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import RentalsGrid from "@/components/ui/RentalsGrid";
 import ListNowButton from "@/components/ui/ListNowButton";
+import AutoOpenListNow from "@/components/ui/AutoOpenListNow";
 import Button from "@/components/ui/Button";
 import pool from "@/lib/db";
 import { RowDataPacket } from "mysql2";
@@ -105,6 +106,7 @@ export default async function Rentals() {
 
   return (
     <section id="rentals" className="py-20 px-[5%] bg-beige">
+      <AutoOpenListNow targetId="rentals" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-center">
         {/* Left — text */}
         <ScrollReveal>
