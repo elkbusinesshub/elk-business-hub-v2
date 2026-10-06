@@ -13,6 +13,20 @@
   --color-ink-mid: #3D3D3D;
   --color-ink-soft: #666666;
 
+  /* Super admin panel (/super-admin) */
+  --color-sa-sidebar: #12352f;
+  --color-sa-sidebar-hover: #1c463e;
+  --color-sa-green: #0f5f50;
+  --color-sa-green-dark: #0b4a3e;
+  --color-sa-bg: #f3f4f2;
+  --color-sa-line: #e3e6e3;
+  --color-sa-muted: #5f6b68;
+  --color-sa-amber: #e9a23b;
+  --color-sa-amber-soft: #fbf1dc;
+  --color-sa-amber-ink: #8a5a12;
+  --color-sa-red: #b42318;
+  --color-sa-red-soft: #fdecea;
+
   --font-sans: var(--font-lato), Lato, ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), "Montserrat", sans-serif;
 
