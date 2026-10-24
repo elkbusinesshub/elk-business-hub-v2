@@ -9,6 +9,7 @@ import {
 import { request } from './client';
 import type {
   AdminModule,
+  AdminStats,
   AppUser,
   ApprovalsSummary,
   Me,
@@ -21,6 +22,7 @@ export const PAGE_SIZE = 20;
 
 export const keys = {
   me: ['me'] as const,
+  stats: ['stats'] as const,
   summary: ['approvals', 'summary'] as const,
   approvals: (view: 'pending' | 'decided', page: number) =>
     ['approvals', view, page] as const,
@@ -45,6 +47,13 @@ export function useMe() {
     queryKey: keys.me,
     queryFn: async () => (await request<Me>('users/me')).data,
     staleTime: Infinity,
+  });
+}
+
+export function useStats() {
+  return useQuery({
+    queryKey: keys.stats,
+    queryFn: async () => (await request<AdminStats>('admin/users/stats')).data,
   });
 }
 

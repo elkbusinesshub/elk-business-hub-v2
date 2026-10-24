@@ -10,7 +10,7 @@ const ALLOWED: { method: string; pattern: RegExp }[] = [
   { method: 'GET', pattern: /^users\/me$/ },
   { method: 'GET', pattern: /^admin\/approvals(\/summary)?$/ },
   { method: 'POST', pattern: /^admin\/approvals\/[\w-]+\/(approve|reject)$/ },
-  { method: 'GET', pattern: /^admin\/users$/ },
+  { method: 'GET', pattern: /^admin\/users(\/stats)?$/ },
   { method: 'PATCH', pattern: /^admin\/users\/[\w-]+\/role$/ },
 ];
 

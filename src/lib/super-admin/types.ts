@@ -1,19 +1,31 @@
 /** Shapes returned by the ELK API's super admin endpoints. */
 
-export type Role =
-  | 'USER'
-  | 'PROVIDER'
-  | 'ADMIN'
-  | 'PROFESSIONAL'
-  | 'SUPER_ADMIN';
+export type Role = 'USER' | 'ADMIN' | 'SUPER_ADMIN';
 
-export const ROLES: Role[] = [
-  'USER',
-  'PROVIDER',
-  'ADMIN',
-  'PROFESSIONAL',
-  'SUPER_ADMIN',
-];
+export const ROLES: Role[] = ['USER', 'ADMIN', 'SUPER_ADMIN'];
+
+/** GET admin/users/stats. Deleted accounts and listings are not counted. */
+export type AdminStats = {
+  users: {
+    customers: number;
+    admins: number;
+    superAdmins: number;
+    total: number;
+  };
+  /** Sellers' marketplace listings, every category. */
+  listings: {
+    active: number;
+    paused: number;
+    draft: number;
+    total: number;
+  };
+  /** ELK's own services that admins run, including ones awaiting approval. */
+  providerListings: {
+    cleaning: number;
+    repair: number;
+    total: number;
+  };
+};
 
 export type PageMeta = {
   page: number;

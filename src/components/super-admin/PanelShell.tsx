@@ -9,6 +9,7 @@ import { initials } from '@/lib/super-admin/format';
 import { useApprovalsSummary, useMe } from '@/lib/super-admin/queries';
 
 const NAV = [
+  { href: '/super-admin/dashboard', label: 'Dashboard', badge: false },
   { href: '/super-admin/approvals', label: 'Approvals', badge: true },
   { href: '/super-admin/history', label: 'Decision history', badge: false },
   { href: '/super-admin/users', label: 'Users', badge: false },

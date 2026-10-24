@@ -107,9 +107,7 @@ export const MODULE_LABELS: Record<AdminModule, string> = {
 
 export const ROLE_LABELS: Record<Role, string> = {
   USER: 'Customer',
-  PROVIDER: 'Provider',
   ADMIN: 'Admin',
-  PROFESSIONAL: 'Professional',
   SUPER_ADMIN: 'Super admin',
 };
 
