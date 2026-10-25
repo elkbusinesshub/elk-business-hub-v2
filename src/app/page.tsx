@@ -10,12 +10,10 @@ import About from "@/components/sections/About";
 import Team from "@/components/sections/Team";
 import AppDownload from "@/components/sections/AppDownload";
 import Footer from "@/components/sections/Footer";
-import AutoOpenFloodRelief from "@/components/ui/AutoOpenFloodRelief";
 
 export default function Page() {
   return (
     <>
-      <AutoOpenFloodRelief />
       <Navbar />
       <main>
         <Hero />
